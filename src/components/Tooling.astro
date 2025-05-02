@@ -1,0 +1,173 @@
+---
+import Subtitle from "./Subtitle.astro";
+import Title from "./Title.astro";
+
+const frontendTools = [
+    {
+        name: 'React',
+    },
+    {
+        name: 'NextJS',
+    },
+    {
+        name: 'Angular',
+    },
+    {
+        name: 'HTML',
+    },
+    {
+        name: 'CSS',
+    },
+    {
+        name: 'Astro',
+    },
+    {
+        name: 'TailwindCSS',
+    },
+    {
+        name: 'Bootstrap',
+    },
+    {
+        name: 'Nanostores',
+    },
+    {
+        name: 'Redux',
+    },
+    {
+        name: 'Recoil',
+    },
+    {
+        name: 'TypeScript'
+    },
+    {
+        name: 'Webpack'
+    },
+    {
+        name: 'JWT'
+    }
+];
+
+const backendTools = [
+    {
+        name: 'NodeJS',
+    },
+    {
+        name: 'ExpressJS',
+    },
+    {
+        name: 'BunJS',
+    },
+    {
+        name: 'Python',
+    },
+    {
+        name: 'FastAPI',
+    },
+    {
+        name: 'PHP',
+    },
+    {
+        name: 'Moodle',
+    },
+    {
+        name: 'NestJS',
+    },
+    {
+        name: 'Redis',
+    },
+    {
+        name: 'Laravel',
+    },
+    {
+        name: 'TypeScript'
+    },
+    {
+        name: 'JWT'
+    },
+    {
+        name: 'TypeORM'
+    },
+    {
+        name: 'Pydantic'
+    },
+    {
+        name: 'Odmantic'
+    },
+];
+
+const dbTools = [
+    {
+        name: 'MySQL',
+    },
+    {
+        name: 'PostgreSQL',
+    },
+    {
+        name: 'MariaDB',
+    },
+    {
+        name: 'MongoDB',
+    }, 
+];
+
+const otherTools = [
+    {
+        name: 'Jenkins'
+    },
+    {
+        name: 'Git'
+    },
+    {
+        name: 'GitHub'
+    },
+    {
+        name: 'Docker'
+    },
+]
+---
+<div class="w-full">
+    <Title title="Herramientas" />
+    <Subtitle text="Frontend" />
+    <div class="flex flex-row flex-wrap gap-1 pt-2">
+        {
+            frontendTools.map(x => (
+                <div class="bg-cosmic-purple w-fit p-1 px-2 rounded-xl shadow-xl">
+                    <h5 class="text-white text-sm">{x.name}</h5>
+                </div>
+            ))
+        }
+    </div>
+
+    <Subtitle text="Backend" />
+    <div class="flex flex-row flex-wrap gap-1 pt-2">
+        {
+            backendTools.map(x => (
+                <div class="bg-cosmic-purple w-fit p-1 px-2 rounded-xl shadow-xl">
+                    <h5 class="text-white text-sm">{x.name}</h5>
+                </div>
+            ))
+        }
+    </div>
+
+    <Subtitle text="Base de datos" />
+    <div class="flex flex-row flex-wrap gap-1 pt-2">
+        {
+            dbTools.map(x => (
+                <div class="bg-cosmic-purple w-fit p-1 px-2 rounded-xl shadow-xl">
+                    <h5 class="text-white text-sm">{x.name}</h5>
+                </div>
+            ))
+        }
+    </div>
+
+    <Subtitle text="Otras" />
+	<div class="flex flex-row flex-wrap gap-1 pt-2">
+        {
+            otherTools.map(x => (
+                <div class="bg-cosmic-purple w-fit p-1 px-2 rounded-xl shadow-xl">
+                    <h5 class="text-white text-sm">{x.name}</h5>
+                </div>
+            ))
+        }
+    </div>
+</div>

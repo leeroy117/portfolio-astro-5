@@ -1,0 +1,17 @@
+---
+const { position, company, date, description } = Astro.props;
+---
+<div class="grid grid-cols-[10%_1fr]">
+    <div class="relative flex flex-col justify-start items-center ">
+        <div class="absolute w-3 h-3 bg-primary bg-cosmic-purple rounded-full top-4 shadow-xl"></div>
+        <div class="w-[0.125rem] h-full bg-primary bg-cosmic-lilac"></div>
+    </div>
+    <div class="text-cPurple dark:text-cText p-2 flex flex-col gap-4">
+        <div class="flex flex-col">
+            <h2 class="font-semibold text-xl text-mars-red">{position}</h2>
+            <h2 class="text-star-white font-semibold text-sm">{company}</h2>
+            <h2 class="text-cosmic-lilac  font-normal text-sm">{date}</h2>
+        </div>
+        <p class="text-star-white">{description}</p>
+    </div>
+</div>

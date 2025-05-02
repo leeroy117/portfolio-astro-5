@@ -1,0 +1,13 @@
+---
+import Title from '../components/Title.astro';
+import Layout from '../layouts/Layout.astro';
+import Wrapper from '../layouts/Wrapper.astro';
+import ContactForm from '../components/ContactForm';
+---
+
+<Layout title="Contact | Leeroy Garcia">
+	<Wrapper>
+		<Title title="Contacto" />
+		<ContactForm client:load/>
+	</Wrapper>
+</Layout>

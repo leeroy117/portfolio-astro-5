@@ -1,0 +1,49 @@
+---
+import Timeline from '../components/Timeline.astro';
+import Title from '../components/Title.astro';
+import Tooling from '../components/Tooling.astro';
+import Layout from '../layouts/Layout.astro';
+import Wrapper from '../layouts/Wrapper.astro';
+
+
+---
+
+<Layout title="About | Leeroy Garcia">
+	<Wrapper>
+		<main class="w-full flex flex-col gap-4">
+			<!-- <div class="w-full flex flex-row justify-center items-center">
+				<h1 class="text-2xl ">Experiencia</h1>
+			</div> -->
+			<Title title="Sobre mi" />
+			<div class="w-full">
+				<p class="text-center text-white">Soy una persona apasionada por la tecnología y el desarrollo de software, con un fuerte deseo de aprender constantemente. Me encanta enfrentarme a nuevos retos porque sé que detrás de cada desafío hay una oportunidad de crecer, mejorar mis habilidades y convertirme en una mejor versión de mí mismo.
+					Creo firmemente que la evolución profesional viene de la curiosidad, la perseverancia y las ganas de salir de la zona de confort. Por eso, siempre estoy buscando proyectos que me reten y me impulsen a seguir aprendiendo.</p>
+			</div>
+			<Title title="Experiencia" />
+	
+			<div class="w-full flex flex-col justify-center gap-0">
+				<Timeline 
+					position={'Ingeniero de Desarrollo'}
+					company={'Academia Global'} 
+					date={'2021 - A la fecha'}
+					description={`Encargado del desarrollo y mantenimiento de aplicaciones web, tanto en backend como en frontend. Implementación de Docker para la contenedorización de aplicaciones, optimizando la infraestructura y despliegue. Creación y gestión de REST APIs para la integración de servicios. Además, he liderado proyectos clave, asegurando su correcta ejecución y entrega.`}
+				/>
+				<Timeline 
+					position={'Desarrollo Frontend (Freelance)'}
+					company={'Weedox'} 
+					date={'2021 - A la fecha'}
+					description={`Desarrollo de la aplicación frontend para un CRM, enfocándome en la implementación de interfaces dinámicas y optimizadas para la experiencia del usuario. Uso de tecnologías modernas para asegurar un diseño responsivo, eficiente y escalable.`}
+				/>
+				<Timeline 
+					position={'Ingeniero de Desarrollo'}
+					company={'Academia Global'} 
+					date={'2021 - A la fecha'}
+					description={`Creación de interfaces para aplicaciones web, diseño y creación de bases de datos, desarrollo de REST APIs, contenedorización de aplicaciones con Docker e implementación de despliegue continuo, optimizando los procesos de desarrollo y entrega de software
+					`}
+				/>
+			</div>
+	
+			<Tooling />
+		</main>
+	</Wrapper>
+</Layout>

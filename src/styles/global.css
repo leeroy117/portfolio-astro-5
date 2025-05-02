@@ -1,0 +1,49 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@layer utilities {
+    .bg-gradient-cBackdrop {
+      background-image: linear-gradient(to top, #000814, #040d1b, #091022, #0d1329, #12152f);
+    }
+
+    .bg-gradient-cBackdropBotbar {
+        /* background-image: linear-gradient(to top, #a133ff, #6b37cd, #3f3198, #222463, #12152f); */
+
+        /* background-image: linear-gradient(to top, #00c7ff, #2994cc, #2e6596, #253a61, #12152f); */
+        /* background-image: linear-gradient(to right top, #a133ff, #6b37cd, #3f3198, #222463, #12152f); */
+        background-color: #222463;
+    }
+
+    .mask-gradient {
+      mask-image: linear-gradient(to bottom, black 80%, transparent 100%)
+    }
+  }
+  
+
+@theme {
+    --font-display: 'Poppins', 'sans-serif';
+
+    --color-deep-blue: #0D0D2B;
+    --color-spacial-dark: #070A1E;
+    --color-dark-blue: #12152F;
+    --color-blue-black: #000814;
+
+    /* for backgrounds */
+
+    --color-star-white: #F5F7FA;
+    --color-neon-purple: #A133FF;
+    --color-gold: #FFD700;
+    --color-cian: #00C7FF;
+    --color-cosmic-pink: #FF4F8B;
+    --color-cosmic-purple: #9A57D3;
+    --color-mars-red: #E63946;
+    --color-turquoise-green: #4ECDC4;
+    --color-cosmic-lilac: #9A57D3;
+    --color-gold-yellow: #FFC857;
+
+
+    --breakpoint-xs: 30rem;
+
+
+
+}

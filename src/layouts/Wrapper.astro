@@ -1,0 +1,6 @@
+---
+import { fade, slide  } from 'astro:transitions';
+---
+<div class="p-4" transition:animate={slide({duration: '1s'})}>
+    <slot /> 
+</div>

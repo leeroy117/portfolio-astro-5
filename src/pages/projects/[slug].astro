@@ -1,0 +1,97 @@
+---
+import Title from '../../components/Title.astro';
+import Layout from '../../layouts/Layout.astro';
+import Wrapper from '../../layouts/Wrapper.astro';
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: "ag" }},
+    { params: { slug: "elgirasol" }},
+    { params: { slug: "wedoox" }},
+  ];
+}
+
+const { slug } = Astro.params;
+
+const projects = [
+    {
+        slug: "elgirasol",
+        name: "Encuestas El Girasol",
+        images:[
+                "/img/img_projects/elgirasol/1.png",
+                "/img/img_projects/elgirasol/2.png",
+                "/img/img_projects/elgirasol/3.png",
+                "/img/img_projects/elgirasol/4.png",
+                "/img/img_projects/elgirasol/5.png",
+                "/img/img_projects/elgirasol/6.png",
+                "/img/img_projects/elgirasol/7.png",
+                "/img/img_projects/elgirasol/main.png",
+            ],
+        tooling: ["Angular", "MySQL", "ExpressJS", "TypeScript", "JavaScript", "CSS", "Bootstrap"],
+        position: "Full Stack Web Developer y Analista",
+        description: [`El Girasol es una tienda naturista con presencia nacional en más de 20 estados de la República 
+        Mexicana. Para conocer mejor la opinión de sus clientes sobre el servicio y los productos que ofrece, 
+        desarrollé un sistema de encuestas que permite recopilar y visualizar datos de forma clara y precisa. 
+        Gracias a esta herramienta, los directivos pueden tomar decisiones informadas basadas en la retroalimentación real 
+        de sus clientes.`]
+    },
+    {
+        slug: "ag",
+        name: "ERP Academia Global",
+        images: ["/img/img_projects/erp_ag/main.png"],
+        tooling: ["Angular", "MySQL", "ExpressJS", "TypeScript", "JavaScript", "CSS", "Bootstrap", "NestJS", "TailwindCSS",
+            "Redis", "Docker", "AWS S3", "AWS EC2"
+        ],
+        position: "Full Stack Web Developer y Analista",
+        description: [`Desarrollé el sistema ERP de Academia Global desde cero, creando tanto la aplicación web en 
+        Angular como los microservicios asociados. Fui responsable de planear la arquitectura general del sistema, 
+        centralizando todas las herramientas internas en una sola plataforma para facilitar el trabajo diario de los usuarios.`]
+    },
+    {
+        slug: "wedoox",
+        name: "Modulo de CRM Wedoox",
+        images: ["/img/img_projects/crm_wedoox/1.png", 
+            "/img/img_projects/crm_wedoox/2.png",
+            "/img/img_projects/crm_wedoox/3.png"
+        ],
+        tooling: ["NextJS", "MySQL", "ExpressJS", "TypeScript", "JavaScript", "CSS", "Bootstrap", "NestJS", "TailwindCSS",
+            "NextJS", "React", "Redux", "TailwindCSS", "Fontawesome", "NextUI"
+        ],
+        position: "Frontend Developer",
+        description: [`Desarrollé una aplicación web con Next.js que sirvió como base para futuros módulos del equipo de desarrollo de Wedoox. Fui responsable de la configuración inicial del proyecto, integrando tecnologías como Redux para la gestión del estado y TailwindCSS para el diseño responsivo.`,`
+        Además, implementé el módulo principal de la aplicación, el cual centralizaba todas las cotizaciones, permitiendo a los usuarios consultar y gestionar la información de forma ágil y organizada. Este módulo fue clave en la operatividad del sistema.`]
+    },
+];
+
+const project = projects.find(p => p.slug === slug);
+console.log("🚀 ~ project:", project)
+---
+<Layout title={`${project?.name} | Leeroy Garcia`}>
+	<Wrapper>
+        <Title title={project?.name} />
+
+        <div class="pt-4 text-lg text-white">
+            {project?.description.map(p => <p class="text-center">{p}</p>)}
+        </div>
+
+        <!-- <Title title="Herramientas" /> -->
+        <div class="w-full flex flex-row justify-center items-center mt-2">
+            <h1 class="text-2xl text-cosmic-purple font-bold">Herramientas</h1>
+        </div>
+
+        <div class="flex flex-row flex-wrap gap-2 pt-4">
+            {project?.tooling?.map((p) =>{
+                return (
+                    <div class="bg-cosmic-purple w-fit p-1 px-2 rounded-xl">
+                        <h5 class="text-white text-sm">{p}</h5>
+                    </div>
+                )
+            })}
+        </div>
+
+        <div class="flex flex-col gap-4 pt-4">
+            {project?.images.map(i => (<img src={i} class="w-full rounded-lg"/>))}
+        </div>
+
+    </Wrapper>
+</Layout>
