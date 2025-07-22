@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { motion } from 'motion/react';
@@ -32,7 +31,6 @@ const ValidacionSchema = Yup.object({
   });
 
 function ContactForm() {
-    const baseUrl = 'https://api.leeroygarcia.dev';
 
     return ( 
         <div className='flex flex-col justify-center items-center w-full'>
@@ -161,7 +159,7 @@ function ContactForm() {
                             !isValid && <div className="text-white font-semibold text-xl">Completa todos los campos</div>
                         } */}
 
-                         <motion.button
+                        <motion.button
                             whileHover={{ scale: 1.03, backgroundColor: '#9333ea', color: '#fff' }}
                             whileTap={{ scale: 0.95 }}
                             transition={{ type: 'spring', stiffness: 100 }}
