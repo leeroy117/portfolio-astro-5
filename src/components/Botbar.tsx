@@ -43,7 +43,7 @@ function Botbar() {
 
         const routes = [
             {
-                url: '/',
+                url: '/home',
                 title: 'Inicio'
             },
             {
@@ -80,11 +80,11 @@ function Botbar() {
     }, [lastScrollTop]); 
 
     return ( 
-    <div className={`fixed  ${isVisible ? 'bottom-0' : '-bottom-20'} 
+    <div className={`2xs:fixed lg:hidden ${isVisible ? 'bottom-0' : '-bottom-20'} 
         flex flex-row justify-center 
         items-center w-svw p-4 z-10 
         bg-transparent transition-all 
-        lg:hidden
+       
         `}>
         
         <div className="w-full h-fit z-20 bg-gradient-cBackdropBotbar rounded-full shadow-md">
@@ -92,11 +92,11 @@ function Botbar() {
                 rounded-full z-50 
                 shadow-sm
                 `}>
-                <ul className={`flex flex-row justify-evenly 
+                <ul  className={`flex flex-row justify-evenly 
                     items-center h-full w-full 
                     font-semibold backdrop-blur-md 
                     rounded-full shadow-md`}>
-                    {routes.map( r => <NavItem url={r.url} title={r.title} />)}
+                    {routes.map( (r,i) => <NavItem key={i} url={r.url} title={r.title} />)}
                 </ul>
             </nav>
         </div>

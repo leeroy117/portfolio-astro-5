@@ -18,6 +18,7 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<ClientRouter />
 		<meta name="generator" content={Astro.generator} />
@@ -25,12 +26,24 @@ const { title } = Astro.props;
 	</head>
 	<body class="bg-gradient-cBackdrop font-display">
 		<!-- <Topbar /> -->
-		<Botbar client:load />
-		<Sidebar client:load />
+		<div class="lg:hidden">
+			 <Botbar client:load />
+		</div>
+		<div class="max-lg:hidden ">
+			<div class="fixed top-0 left-0 w-[20%] h-screen overflow-y-auto bg-gray-100">
+				<Sidebar client:load />
+			</div>
+			<div class="ml-[20%] overflow-y-scroll h-screen">
+				<slot />
+			</div>
+
+		</div>
 		<div 
 			class={` 
 				min-h-svh 
-				overflow-y-scroll`
+				overflow-y-scroll
+				lg:hidden
+				`
 		}>
 			<slot />
 		</div>
@@ -52,8 +65,9 @@ const { title } = Astro.props;
 		}
 
 		.drop-shadow-custom-black {
-			filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.9));
+			filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.9));
 		}
+		
 	}
 </style>
 <script>

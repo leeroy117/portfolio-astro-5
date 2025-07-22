@@ -1,7 +1,29 @@
 ---
+import Projects from '../../components/Projects';
 import Title from '../../components/Title.astro';
 import Layout from '../../layouts/Layout.astro';
 import Wrapper from '../../layouts/Wrapper.astro';
+
+const projects = [
+	{
+		name: "Encuestas El Girasol",
+		href: "/projects/elgirasol",
+		img: "/img/img_projects/elgirasol/1.png",
+		role: "Full Stack Web Developer"
+	},
+	{
+		name: "ERP Academia Global",
+		href: "/projects/ag",
+		img: "/img/img_projects/erp_ag/main.png",
+		role: "Full Stack Web Developer"
+	},
+	{
+		name: "Modulo de CRM Wedoox",
+		href: "/projects/wedoox",
+		img: "/img/img_projects/crm_wedoox/1.png",
+		role: "Frontend Developer"
+	}
+];
 ---
 
 <Layout title="Projects | Leeroy Garcia">
@@ -9,56 +31,7 @@ import Wrapper from '../../layouts/Wrapper.astro';
 		<main class="p-4">
 			<!-- <h2 class="text-3xl font-extrabold text-white">Proyectos</h2> -->
 			<Title title="Proyectos" />
-			
-			<div class="pt-4 flex flex-col gap-6">
-
-				<div class="w-full rounded-xl bg-gray-100 shadow-md">
-					<a href="/projects/elgirasol">
-						<img 
-							class="rounded-t-lg"
-							src="/img/img_projects/elgirasol/1.png" 
-							alt="" 
-							srcset=""
-						>
-						<div class="p-4">
-							<p class="text-xl font-semibold">Encuestas El Girasol</p>
-							<p class="text-sm font-semibold text-gray-600">Full Stack Web Developer</p>
-						</div>
-					</a>
-				</div>
-
-				<div class="w-full rounded-xl bg-gray-100 shadow-md">
-					<a href="/projects/ag">
-						<img 
-							class="rounded-t-lg"
-							src="/img/img_projects/erp_ag/main.png" 
-							alt="" 
-							srcset=""
-						>
-						<div class="p-4">
-							<p class="text-xl font-semibold">ERP Academia Global</p>
-							<p class="text-sm font-semibold text-gray-600">Full Stack Web Developer</p>
-						</div>
-					</a>
-				</div>
-
-				<div class="w-full rounded-xl bg-gray-100 shadow-md">
-					<a href="/projects/wedoox">
-						<img 
-							class="rounded-t-lg"
-							src="/img/img_projects/crm_wedoox/1.png" 
-							alt="" 
-							srcset=""
-						>
-						<div class="p-4">
-							<p class="text-xl font-semibold">Modulo de CRM Wedoox</p>
-							<p class="text-sm font-semibold text-gray-600">Frontend Developer</p>
-						</div>
-					</a>
-				</div>
-
-			</div>
-			
+			<Projects projects={projects} client:load />
 		</main>
 	</Wrapper>
 </Layout>

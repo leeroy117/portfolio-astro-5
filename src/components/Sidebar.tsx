@@ -1,6 +1,7 @@
 import { useStore } from "@nanostores/react";
 import { isMenuOpen } from "../menuStore";
 import { useEffect, useState } from "react";
+import SidebarItem from "./SidebarItem";
 
 function Sidebar() {
     const $isMenuOpen = useStore(isMenuOpen);
@@ -12,52 +13,30 @@ function Sidebar() {
     }, []);
 
     return (
-        <aside className={`fixed w-svw h-csidebar bg-sidebar 
-                    flex flex-col top-14
-                    ${$isMenuOpen ? 'translate-x-0' : '-translate-x-[100%]'} 
+        <aside className={` h-svh 
+                    bg-blue-black
+                    text-white 
+                    flex flex-col
+                    translate-x-0
                     transition-all
                     duration-500
-                    shadow-xl
+                    shadow-md
                     z-20
                     `}>
-            <nav className="h-[95%] flex flex-col justify-center items-center">
+            <nav className="h-full flex flex-col justify-center items-center">
                 <ul className="flex flex-col justify-center h-full text-4xl gap-5 text-cText">
-                    <li className="bg-cAccent">
-                        <a 
-                            className={`${currentPath == '/' ? 'text-cAccent' : 'text-cText'}`} 
-                            href="/"
-                        >
-                            <span className="">Inicio</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a 
-                            className={`${currentPath == '/about' ? 'text-cAccent' : 'text-cText'}`} 
-                            href="/about"
-                        > 
-                            <span>Acerca de</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a 
-                            className={`${currentPath == '/projects' ? 'text-cAccent' : 'text-cText'}`} 
-                            href="/projects"
-                        >
-                            <span className="">Proyectos</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a 
-                            className={`${currentPath == '/contact' ? 'text-cAccent' : 'text-cText'}`} 
-                            href="/contact"
-                        >
-                            <span className="">Contacto</span>
-                        </a>
-                    </li>
+                    <SidebarItem 
+                        href="/home" 
+                        title="Inicio" 
+                        currentPath={currentPath} 
+                    />
+                    <SidebarItem href="/about" title="Acerca de" currentPath={currentPath} />
+                    <SidebarItem href="/projects" title="Proyectos" currentPath={currentPath} />
+                    <SidebarItem href="/contact" title="Contacto" currentPath={currentPath} />
                 </ul>
             </nav>
-            <footer className="flex flex-row justify-center items-center w-full">
-                <span className="text-cText">all rights reserved </span>
+            <footer className="flex flex-row justify-center items-center w-full py-8">
+                <span className="font-semibold text-cosmic-pink">Leeroy Garcia all rights reserved </span>
             </footer>
         </aside>
       );

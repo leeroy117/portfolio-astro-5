@@ -7,7 +7,20 @@ import ContactForm from '../components/ContactForm';
 
 <Layout title="Contact | Leeroy Garcia">
 	<Wrapper>
-		<Title title="Contacto" />
-		<ContactForm client:load/>
+		<div class="flex flex-row justify-center items-center h-full w-full">
+			<div 
+				class="lg:w-8/12 xl:w-5/12 bg-blue-black 
+					p-8 rounded-lg shadow-md 
+					flex flex-col gap-5 backdrop-blur-sm
+					2xs:w-12/12
+					xs:w-12/12
+					sm:w-11/12
+					md:w-11/12
+				"
+			> 
+				<Title title="Contacto" color="text-turquoise-green" />
+				<ContactForm client:only="react" />
+			</div>
+		</div>
 	</Wrapper>
 </Layout>
