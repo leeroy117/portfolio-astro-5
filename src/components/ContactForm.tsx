@@ -8,25 +8,25 @@ import Swal from 'sweetalert2';
 
 const ValidacionSchema = Yup.object({
     name: Yup.string()
-        .required('El nombre es requerido')
-        .matches(/^[a-zA-Z]+/,'Debe incluir solo letras y espacios.'),
+        .required('Name is required')
+        .matches(/^[a-zA-Z]+/,'Name must have only letters'),
 
     email: Yup.string()
-      .email('Correo inválido'),
+      .email('Email is invalid'),
 
 
     phone: Yup.string()
     .matches(
       /^\+\d{1,3}\d{7,14}$/,
-      'Debe incluir el código de país (ej: +521234567890)'
+      'Phone number must include country code (example: +521234567890)'
     ),
 
     message: Yup.string()
-      .required('El mensaje es requerido')
-      .min(10, 'El mensaje debe tener al menos 10 caracteres')
-      .max(500, 'El mensaje debe tener menos de 500 caracteres'),
+      .required('Message is required')
+      .min(10, 'Message must have at least 10 characters')
+      .max(500, 'Message must have less than 500 characters'),
 
-  }).test('email-or-phone', 'Debe proporcionar un email o un teléfono', (values) => {
+  }).test('email-or-phone', 'You must provide email or phone', (values) => {
     return !!(values.email || values.phone);
   });
 
@@ -148,7 +148,7 @@ function ContactForm() {
                                 "
                             id="message"
                             name="message"
-                            placeholder="Hola me gustaria hablar contigo..."
+                            placeholder="Hello I would like to contact you..."
                             type="textarea"
                             as="textarea"
                         />
@@ -178,7 +178,7 @@ function ContactForm() {
                             >
 
                                 {
-                                    isSubmitting ? <PacmanLoader color="#FFC857" /> : 'Enviar'
+                                    isSubmitting ? <PacmanLoader color="#FFC857" /> : 'Send Message'
                                 }
 
                         </motion.button>

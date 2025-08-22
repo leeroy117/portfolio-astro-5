@@ -44,32 +44,37 @@ function Botbar() {
         const routes = [
             {
                 url: '/home',
-                title: 'Inicio'
+                title: 'Home'
             },
             {
                 url: '/about',
-                title: 'Acerca'
+                title: 'About'
             },
             {
                 url: '/projects',
-                title: 'Proyectos'
+                title: 'Projects'
             },
         ]
+
+        console.log("isVisible botbar", isVisible);
 
         setRoutes(routes);
     }, [])
     
     useEffect(() => {
         const handleScroll = () => {
-        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            console.log("🚀 ~ handleScroll ~ currentScrollTop:", currentScrollTop)
 
-        if (currentScrollTop > lastScrollTop) {
-            setIsVisible(false);
-        } else {
-            setIsVisible(true);
-        }
+            if (currentScrollTop > lastScrollTop) {
+                console.log('abajo');
+                setIsVisible(false);
+            } else {
+                console.log('arriba');
+                setIsVisible(true);
+            }
 
-        setLastScrollTop(currentScrollTop);
+            setLastScrollTop(currentScrollTop);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -80,7 +85,7 @@ function Botbar() {
     }, [lastScrollTop]); 
 
     return ( 
-    <div className={`2xs:fixed lg:hidden ${isVisible ? 'bottom-0' : '-bottom-20'} 
+    <div className={`2xs:fixed lg:hidden ${isVisible ? '2xs:bottom-0' : '2xs:-bottom-20'} 
         flex flex-row justify-center 
         items-center w-svw p-4 z-10 
         bg-transparent transition-all 

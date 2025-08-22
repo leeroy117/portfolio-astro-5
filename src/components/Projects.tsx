@@ -10,7 +10,7 @@ interface IProject {
 
 const projects: IProject[] = [
 	{
-		name: "Encuestas El Girasol",
+		name: "El Girasol Surveys",
 		href: "/projects/elgirasol",
 		img: "/img/img_projects/elgirasol/1.png",
 		role: "Full Stack Web Developer"
@@ -22,7 +22,7 @@ const projects: IProject[] = [
 		role: "Full Stack Web Developer"
 	},
 	{
-		name: "Modulo de CRM Wedoox",
+		name: "Module of CRM Wedoox",
 		href: "/projects/wedoox",
 		img: "/img/img_projects/crm_wedoox/1.png",
 		role: "Frontend Developer"

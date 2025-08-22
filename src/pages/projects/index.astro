@@ -6,7 +6,7 @@ import Wrapper from '../../layouts/Wrapper.astro';
 
 const projects = [
 	{
-		name: "Encuestas El Girasol",
+		name: "Surveys to compute NPS",
 		href: "/projects/elgirasol",
 		img: "/img/img_projects/elgirasol/1.png",
 		role: "Full Stack Web Developer"
@@ -18,7 +18,7 @@ const projects = [
 		role: "Full Stack Web Developer"
 	},
 	{
-		name: "Modulo de CRM Wedoox",
+		name: "Module of CRM",
 		href: "/projects/wedoox",
 		img: "/img/img_projects/crm_wedoox/1.png",
 		role: "Frontend Developer"
@@ -30,7 +30,7 @@ const projects = [
 	<Wrapper>
 		<main class="p-4">
 			<!-- <h2 class="text-3xl font-extrabold text-white">Proyectos</h2> -->
-			<Title title="Proyectos" />
+			<Title title="Projects" />
 			<Projects projects={projects} client:load />
 		</main>
 	</Wrapper>

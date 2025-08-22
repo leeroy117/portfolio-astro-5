@@ -16,7 +16,7 @@ const { slug } = Astro.params;
 const projects = [
     {
         slug: "elgirasol",
-        name: "Encuestas El Girasol",
+        name: "Surveys to compute NPS",
         images:[
                 "/img/img_projects/elgirasol/1.png",
                 "/img/img_projects/elgirasol/2.png",
@@ -28,12 +28,11 @@ const projects = [
                 "/img/img_projects/elgirasol/main.png",
             ],
         tooling: ["Angular", "MySQL", "ExpressJS", "TypeScript", "JavaScript", "CSS", "Bootstrap"],
-        position: "Full Stack Web Developer y Analista",
-        description: [`El Girasol es una tienda naturista con presencia nacional en más de 20 estados de la República 
-        Mexicana. Para conocer mejor la opinión de sus clientes sobre el servicio y los productos que ofrece, 
-        desarrollé un sistema de encuestas que permite recopilar y visualizar datos de forma clara y precisa. 
-        Gracias a esta herramienta, los directivos pueden tomar decisiones informadas basadas en la retroalimentación real 
-        de sus clientes.`]
+        position: "Full-Stack Web Developer & Analyst",
+        description: [`El Girasol is a natural products store with a national presence in more than 20 states across
+         Mexico. To better understand customers’ opinions about its services and products, I developed a survey system 
+         that collects and visualizes data in a clear and accurate way. Thanks to this tool, the management team can 
+         now make informed decisions based on real customer feedback.`]
     },
     {
         slug: "ag",
@@ -42,14 +41,14 @@ const projects = [
         tooling: ["Angular", "MySQL", "ExpressJS", "TypeScript", "JavaScript", "CSS", "Bootstrap", "NestJS", "TailwindCSS",
             "Redis", "Docker", "AWS S3", "AWS EC2"
         ],
-        position: "Full Stack Web Developer y Analista",
-        description: [`Desarrollé el sistema ERP de Academia Global desde cero, creando tanto la aplicación web en 
-        Angular como los microservicios asociados. Fui responsable de planear la arquitectura general del sistema, 
-        centralizando todas las herramientas internas en una sola plataforma para facilitar el trabajo diario de los usuarios.`]
+        position: "Full Stack Web Developer",
+        description: [`I developed the ERP system for Academia Global from scratch, building both the web application
+         in Angular and the associated microservices. I was responsible for designing the overall system architecture, 
+         centralizing all internal tools into a single platform to streamline users’ daily work.`]
     },
     {
         slug: "wedoox",
-        name: "Modulo de CRM Wedoox",
+        name: "Module of CRM",
         images: ["/img/img_projects/crm_wedoox/1.png", 
             "/img/img_projects/crm_wedoox/2.png",
             "/img/img_projects/crm_wedoox/3.png"
@@ -58,8 +57,12 @@ const projects = [
             "NextJS", "React", "Redux", "TailwindCSS", "Fontawesome", "NextUI"
         ],
         position: "Frontend Developer",
-        description: [`Desarrollé una aplicación web con Next.js que sirvió como base para futuros módulos del equipo de desarrollo de Wedoox. Fui responsable de la configuración inicial del proyecto, integrando tecnologías como Redux para la gestión del estado y TailwindCSS para el diseño responsivo.`,`
-        Además, implementé el módulo principal de la aplicación, el cual centralizaba todas las cotizaciones, permitiendo a los usuarios consultar y gestionar la información de forma ágil y organizada. Este módulo fue clave en la operatividad del sistema.`]
+        description: [`I developed a web application with Next.js that served as the foundation for future modules of 
+        Wedoox’s development team. I was responsible for the project’s initial setup, integrating technologies such 
+        as Redux for state management and TailwindCSS for responsive design. Additionally, 
+        I implemented the application’s main module, which centralized all quotations, enabling users to 
+        consult and manage information quickly and in an organized manner. This module was key to the system’s 
+        operations.`]
     },
 ];
 
@@ -76,7 +79,7 @@ console.log("🚀 ~ project:", project)
 
         <!-- <Title title="Herramientas" /> -->
         <div class="w-full flex flex-row justify-center items-center mt-2">
-            <h1 class="text-2xl text-cosmic-purple font-bold">Herramientas</h1>
+            <h1 class="text-2xl text-cosmic-purple font-bold">Tooling</h1>
         </div>
 
         <div class="flex flex-row flex-wrap gap-2 pt-4">

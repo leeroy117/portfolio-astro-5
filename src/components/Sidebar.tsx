@@ -27,12 +27,12 @@ function Sidebar() {
                 <ul className="flex flex-col justify-center h-full text-4xl gap-5 text-cText">
                     <SidebarItem 
                         href="/home" 
-                        title="Inicio" 
+                        title="Home" 
                         currentPath={currentPath} 
                     />
-                    <SidebarItem href="/about" title="Acerca de" currentPath={currentPath} />
-                    <SidebarItem href="/projects" title="Proyectos" currentPath={currentPath} />
-                    <SidebarItem href="/contact" title="Contacto" currentPath={currentPath} />
+                    <SidebarItem href="/about" title="About" currentPath={currentPath} />
+                    <SidebarItem href="/projects" title="Projects" currentPath={currentPath} />
+                    <SidebarItem href="/contact" title="Contact" currentPath={currentPath} />
                 </ul>
             </nav>
             <footer className="flex flex-row justify-center items-center w-full py-8">
